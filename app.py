@@ -11,12 +11,12 @@ with open("vectorizer.pkl", "rb") as vectorizer_file:
 
 def predict_fake_news(input_text):
     """Predict if the given news is real or fake."""
-    cleaned_text = input_text.lower()  # Simplified preprocessing
-    vectorized_text = vectorizer.transform([cleaned_text])  # Vectorize text using the trained vectorizer
-    prediction = model.predict(vectorized_text)  # Predict using the model
-    return "Real" if prediction[0] == 1 else "Fake"  # Return prediction
+    cleaned_text = input_text.lower() 
+    vectorized_text = vectorizer.transform([cleaned_text])  
+    prediction = model.predict(vectorized_text) 
+    return "Real" if prediction[0] == 1 else "Fake" 
 
-# Streamlit app UI
+# UI
 st.set_page_config(page_title="Fake News Detection", page_icon="📰")
 st.title("Fake News Detection App 📰")
 st.write("Enter a news headline or article content to check if it's real or fake.")
